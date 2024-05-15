@@ -16,42 +16,24 @@
         <input type="submit" value="Guardar">
     </form>
     <script type="module">
-  // Import the functions you need from the SDKs you need
-
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-
-  // Your web app's Firebase configuration
-
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-  const firebaseConfig = {
-
-    apiKey: "AIzaSyCkAskZPs_DQfCm8EvO7o6fzGHR_ZFuYhI",
-
-    authDomain: "crud-f551c.firebaseapp.com",
-
-    projectId: "crud-f551c",
-
-    storageBucket: "crud-f551c.appspot.com",
-
-    messagingSenderId: "768086080177",
-
-    appId: "1:768086080177:web:4cfe3cba97b250e6bac090",
-
-    measurementId: "G-VEHXH93TD1"
-
-  };
-
-
-  // Initialize Firebase
-
-  const app = initializeApp(firebaseConfig);
-
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCkAskZPs_DQfCm8EvO7o6fzGHR_ZFuYhI",
+            authDomain: "crud-f551c.firebaseapp.com",
+            projectId: "crud-f551c",
+            storageBucket: "crud-f551c.appspot.com",
+            messagingSenderId: "768086080177",
+            appId: "1:768086080177:web:4cfe3cba97b250e6bac090",
+            measurementId: "G-VEHXH93TD1"
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
         const db = getFirestore(app)
         const productos = document.getElementById("productos");
         productos.addEventListener("submit", async(e)=>{
@@ -60,8 +42,9 @@
                 nombreProd: productos.nombre.value,
                 descripcionProd: productos.descripcion.value,  
                 precioProd: productos.precio.value
-            })
+            });
+            e.reset();
         });
-      </script>
+    </script>
 </body>
 </html>
